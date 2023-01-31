@@ -1,10 +1,17 @@
 #ifndef JUEGO_H
 #define JUEGO_H
+#include "configuracion.h"
+#include "circulo.h"
+
 
 #include <QMainWindow>
 #include <QDebug>
-#include "configuracion.h"
-#include "circulo.h"
+#include <QPoint>
+#include <QPainter>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QImage>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Juego; }
@@ -17,6 +24,8 @@ class Juego : public QMainWindow
 public:
     Juego(QWidget *parent = nullptr);
     ~Juego();
+protected:
+    virtual void paintEvent(QPaintEvent *event);
 
 private slots:
     void on_btnArriba_released();
@@ -31,8 +40,13 @@ private slots:
 
     void on_actionSalir_triggered();
 
+    void on_marco_customContextMenuRequested(const QPoint &pos);
+
 private:
     Ui::Juego *ui;
     Circulo *m_circulo;
+    void dibujar();
+    QImage *m_lienzo;
+    QPainter *m_Painter;
 };
 #endif // JUEGO_H

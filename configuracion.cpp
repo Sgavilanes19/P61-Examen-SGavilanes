@@ -35,7 +35,7 @@ void Configuracion::setWidgetColor()
     int r = m_color.red();
     int g = m_color.green();
     int b = m_color.blue();
-    QString style = "background-color: rgb(" + QString::number(r) + ", " + QString::number(g) + ", " + QString::number(b) + ")";
+    QString style = "background-color: bmc(" + QString::number(r) + ", " + QString::number(g) + ", " + QString::number(b) + ")";
     ui->wigetColor->setStyleSheet(style);
 }
 
@@ -47,5 +47,17 @@ const QColor &Configuracion::color() const
 int Configuracion::dimension() const
 {
     return m_dimension;
+}
+
+
+void Configuracion::on_inDimension_sliderMoved(int position)
+{
+
+}
+
+
+void Configuracion::on_inDimension_sliderReleased()
+{
+
 }
 
