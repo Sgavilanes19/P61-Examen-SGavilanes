@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>Juego</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="Resourses.qrc">
-    <normaloff>:/Recursos/997782.png</normaloff>:/Recursos/997782.png</iconset>
-  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -122,6 +118,10 @@
     <property name="title">
      <string>Archivo</string>
     </property>
+    <property name="icon">
+     <iconset resource="Resourses.qrc">
+      <normaloff>:/Recursos/archivo.png</normaloff>:/Recursos/archivo.png</iconset>
+    </property>
     <addaction name="actionConfigraci0n"/>
     <addaction name="separator"/>
     <addaction name="actionSalir"/>
@@ -130,11 +130,19 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionConfigraci0n">
+   <property name="icon">
+    <iconset resource="Resourses.qrc">
+     <normaloff>:/Recursos/675729.png</normaloff>:/Recursos/675729.png</iconset>
+   </property>
    <property name="text">
     <string>Configración</string>
    </property>
   </action>
   <action name="actionSalir">
+   <property name="icon">
+    <iconset resource="Resourses.qrc">
+     <normaloff>:/Recursos/salir.png</normaloff>:/Recursos/salir.png</iconset>
+   </property>
    <property name="text">
     <string>Salir</string>
    </property>

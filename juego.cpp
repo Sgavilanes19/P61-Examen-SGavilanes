@@ -42,7 +42,7 @@ void Juego::on_btnArriba_released()
 {
     m_lienzo->fill(Qt::white);
     m_circulo->setAncho(m_circulo->getAncho()-1);
-    if (m_circulo->getAncho()==30){
+    if (m_circulo->getAncho()==0){
         QMessageBox::information(this,"No es posible","Fuera de rango");
                 return;
     }
