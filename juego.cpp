@@ -4,7 +4,7 @@
 
 #include <QPainter>
 #include <QFileDialog>
-
+#include <QMessageBox>
 Juego::Juego(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Juego)
@@ -42,6 +42,10 @@ void Juego::on_btnArriba_released()
 {
     m_lienzo->fill(Qt::white);
     m_circulo->setAncho(m_circulo->getAncho()-1);
+    if (m_circulo->getAncho()==30){
+        QMessageBox::information(this,"No es posible","Fuera de rango");
+                return;
+    }
     dibujar();
 
 }
@@ -67,6 +71,7 @@ void Juego::on_btnDerecha_released()
 {
     m_lienzo->fill(Qt::white);
     m_circulo->setAnchx(m_circulo->getAnchx()+1);
+
     dibujar();
 }
 
@@ -96,13 +101,11 @@ void Juego::dibujar()
     pincel.setJoinStyle(Qt::MiterJoin);
 
     pincel.setColor(Qt::black);
-    pincel.setWidth(3);
+    pincel.setWidth(5);
     m_Painter->setPen(pincel);
     m_Painter->drawEllipse(m_circulo->getAnchx(), m_circulo->getAncho(), m_circulo->getTalla(), m_circulo->getTalla());
     update();
 }
-
-
 
 
 void Juego::on_marco_customContextMenuRequested(const QPoint &pos)

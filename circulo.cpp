@@ -32,9 +32,9 @@ void Circulo::setAnchx(int value)
 
 Circulo::Circulo()
 {
-    ancho=50;
-    alto=20;
-    tal=100;
+    ancho=20;
+    alto=200;
+    tal=150;
 }
 
 Circulo::Circulo(int x, int y, int size)
